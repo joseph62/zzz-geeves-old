@@ -18,7 +18,7 @@ def verify_request(signature, timestamp, body):
 
 
 @app.route("/", methods=["POST"])
-def my_command():
+def handle_interaction():
     print(request.json)
     verify_request(
         request.headers["X-Signature-Ed25519"],

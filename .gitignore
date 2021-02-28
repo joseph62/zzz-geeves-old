@@ -4,5 +4,6 @@ bin/
 include/
 lib/
 lib64/
+lib64
 share/
 client_credentials
