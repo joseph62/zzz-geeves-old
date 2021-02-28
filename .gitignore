@@ -6,4 +6,4 @@ lib/
 lib64/
 lib64
 share/
-client_credentials
+discord_client_credentials
