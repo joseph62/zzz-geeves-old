@@ -1,15 +1,19 @@
 import requests
 from collections import namedtuple
 
-DiscordCredentials = namedtuple("DiscordCredentials", "client_id client_secret guild_id")
+DiscordCredentials = namedtuple(
+    "DiscordCredentials", "client_id client_secret guild_id"
+)
 
 DiscordToken = namedtuple("DiscordToken", "access_token scope token_type expires_in")
+
 
 def get_token(discord_credentials):
     data = {
         "grant_type": "client_credentials",
         "scope": "bot applications.commands.update applications.commands",
         "client_id": discord_credentials.client_id,
+        "guild_id": discord_credentials.guild_id,
         "response_type": "code",
     }
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
